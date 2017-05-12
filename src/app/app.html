@@ -1,0 +1,23 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="appContent">
+
+<img class="imgCenter img70" src="img/badge.png"/>
+
+<ion-title (click)="toggleReports();"><ion-icon class="iconRightMargin" name="construct"></ion-icon>Reports<ion-icon *ngIf="!isReports"class="floatIcon" name="arrow-dropright-circle"></ion-icon><ion-icon *ngIf="isReports"class="floatIcon" name="arrow-dropdown-circle"></ion-icon></ion-title>
+    <ion-list  *ngIf="isReports" class="appContent">
+      <button  class="leftMargin" menuClose ion-item *ngFor="let p of reports" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
