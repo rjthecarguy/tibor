@@ -1,4 +1,4 @@
-<ion-menu [content]="content">
+<ion-menu [content]="content" (ionClose)="menuClosed()">
   <ion-header>
     <ion-toolbar>
       <ion-title>Menu</ion-title>
@@ -13,9 +13,7 @@
 
 <ion-title (click)="toggleReports();"><ion-icon class="iconRightMargin" name="construct"></ion-icon>Reports<ion-icon *ngIf="!isReports"class="floatIcon" name="arrow-dropright-circle"></ion-icon><ion-icon *ngIf="isReports"class="floatIcon" name="arrow-dropdown-circle"></ion-icon></ion-title>
     <ion-list  *ngIf="isReports" class="appContent">
-      <button  class="leftMargin" menuClose ion-item *ngFor="let p of reports" (click)="openPage(p)">
-        {{p.title}}
-      </button>
+      <button  class="leftMargin" menuClose ion-item (click)="openAction();">File a Report</button>
     </ion-list>
     <div class="titleSpace"></div>
     <ion-title><ion-icon class="iconRightMargin" name="keypad"></ion-icon>General</ion-title>

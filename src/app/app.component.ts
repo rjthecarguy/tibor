@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { ActionSheet} from '../providers/action-sheet'
 
 @Component({
   templateUrl: 'app.html'
@@ -19,7 +20,7 @@ export class MyApp {
   pages: Array<{title: string, component: any}>;
   reports: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public actionMenu: ActionSheet) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -56,6 +57,14 @@ export class MyApp {
 
   this.isReports = !this.isReports;
 
+}
+
+openAction() {
+  this.actionMenu.openActionSheet();
+}
+
+menuClosed() {
+  this.isReports = false;
 }
 
 
