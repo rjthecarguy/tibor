@@ -113,13 +113,18 @@ $colors: (
 	height:  15px;
 }
 
-.createButton {
-	width: 100%;
+.createButtonDiv {
+	width: 90%;
+	position: absolute;
+	bottom: 10%;
 	text-align: center;
 	display: block;
+	
+
 
 }
 
-.badgeSpace {
-	height: 120px;
+.createButton {
+	width: 100%;
 }
+
