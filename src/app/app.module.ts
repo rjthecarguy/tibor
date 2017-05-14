@@ -4,18 +4,24 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { MapPage } from '../pages/map-page/map-page';
 import { ListPage } from '../pages/list/list';
 import { ActionSheet } from '../providers/action-sheet';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Geolocation } from '@ionic-native/geolocation';
+
+
+
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage
-  ],
+    ListPage,
+    MapPage
+      ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
@@ -24,12 +30,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    MapPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     ActionSheet,
+    Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

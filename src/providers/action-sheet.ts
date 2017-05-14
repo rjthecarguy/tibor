@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { ActionSheetController } from 'ionic-angular'
+import { NavController } from 'ionic-angular';
+import { Events } from 'ionic-angular';
 
 /*
   Generated class for the ActionSheet provider.
@@ -12,7 +14,7 @@ import { ActionSheetController } from 'ionic-angular'
 @Injectable()
 export class ActionSheet {
 
-  constructor(public actionSheetCtrl: ActionSheetController) {
+  constructor(public actionSheetCtrl: ActionSheetController, public events:Events) {
     console.log('Hello ActionSheet Provider');
   }
 
@@ -25,6 +27,7 @@ openActionSheet(){
  {
  text: 'Create a Photo/Video',
  handler: () => {
+ 	this.events.publish('Menu:page', "LocationPage");
  console.log("Camera Clicked");
  }
  },{
@@ -49,6 +52,8 @@ openActionSheet(){
  });
  actionsheet.present();
 }
+  
+
   
 
 }

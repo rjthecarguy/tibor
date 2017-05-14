@@ -5,7 +5,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
-import { ActionSheet} from '../providers/action-sheet'
+import { ActionSheet} from '../providers/action-sheet';
+import { Events } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 
 @Component({
   templateUrl: 'app.html'
@@ -20,8 +22,19 @@ export class MyApp {
   pages: Array<{title: string, component: any}>;
   reports: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public actionMenu: ActionSheet) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public actionMenu: ActionSheet, public events:Events) {
     this.initializeApp();
+
+
+    this.events.subscribe('Menu:page', (pageName) => {
+  // user and time are the same arguments passed in `events.publish(user, time)`
+ 
+this.nav.setRoot(pageName);
+  
+  
+
+});
+
 
     // used for an example of ngFor and navigation
     this.pages = [
