@@ -1,6 +1,9 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
+import { PicturePage} from '../../pages/picture-page/picture-page';
+import { Report } from '../../providers/report'
+
 /**
  * Generated class for the LocationPage page.
  *
@@ -20,9 +23,11 @@ export class LocationPage {
 
 @ViewChild('map') mapElement: ElementRef;
   map: any;
+  long: any;
+  lat: any;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public geolocation: Geolocation) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public geolocation: Geolocation,public report:Report) {
   }
 
   ionViewDidLoad() {
@@ -32,6 +37,11 @@ export class LocationPage {
   loadMap(){
  
      this.geolocation.getCurrentPosition().then((position) => {
+
+
+     	this.report.lat = position.coords.latitude;
+     	this.report.long = position.coords.longitude;
+ 
  
       let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
  
@@ -55,6 +65,10 @@ export class LocationPage {
     });
 
  
+  }
+
+  openPicturePage() {
+  	this.navCtrl.setRoot(PicturePage);
   }
 
 }

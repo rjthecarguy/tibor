@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { ActionSheetController } from 'ionic-angular'
 import { NavController } from 'ionic-angular';
 import { Events } from 'ionic-angular';
+
 
 /*
   Generated class for the ActionSheet provider.

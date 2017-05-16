@@ -15,4 +15,15 @@
 
 <ion-content padding>
  <div #map id="map"></div>  
+<p>The following GPS coordinates will be recorded for this report:</p>
+
+<p>Lattitude:  {{this.report.lat}}
+<br>
+Longitude: {{this.report.long}}
+</p>
+
+<div style="text-align: center">
+<button ion-button (click)="openPicturePage();">Continue</button>
+<button ion-button (click)="loadMap();">Re-Verify Position</button>
+</div>
 </ion-content>
