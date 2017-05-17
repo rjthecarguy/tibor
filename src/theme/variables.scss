@@ -128,3 +128,24 @@ $colors: (
 	width: 100%;
 }
 
+.pageDiv {
+	text-align: center;
+}
+
+.pageDiv button {
+	text-align: center;
+	width: 90%;
+	margin-bottom: 20px;
+}
+
+.pageDiv p {
+	text-align: center;
+	line-height: 1.8em;
+	font-size: 22px;
+}
+
+.imagePrevDiv {
+	width: 95%;
+	border: 2px solid black;
+	margin: auto auto;
+}

@@ -9,6 +9,11 @@ import { ListPage } from '../pages/list/list';
 import { PicturePage } from '../pages/picture-page/picture-page';
 import { ActionSheet } from '../providers/action-sheet';
 import { Report } from '../providers/report';
+import { Camera } from '@ionic-native/camera';
+import { TakePicture} from '../pages/take-picture/take-picture';
+import { GetImage} from '../pages/get-image/get-image';
+
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -23,7 +28,9 @@ import { Geolocation } from '@ionic-native/geolocation';
     HomePage,
     ListPage,
     MapPage,
-    PicturePage
+    PicturePage,
+    TakePicture,
+    GetImage
       ],
   imports: [
     BrowserModule,
@@ -35,10 +42,13 @@ import { Geolocation } from '@ionic-native/geolocation';
     HomePage,
     ListPage,
     MapPage,
-    PicturePage
+    PicturePage,
+    TakePicture,
+    GetImage
   ],
   providers: [
     StatusBar,
+    Camera,
     SplashScreen,
     ActionSheet,
     Report,

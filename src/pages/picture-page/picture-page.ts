@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {TakePicture} from '../../pages/take-picture/take-picture';
+import {GetImage} from '../../pages/get-image/get-image';
 
 /**
  * Generated class for the PicturePage page.
@@ -20,5 +22,14 @@ export class PicturePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad PicturePage');
   }
+
+takePicturePage() {
+	this.navCtrl.setRoot(TakePicture);
+}
+
+selectImagePage() {
+	this.navCtrl.setRoot(GetImage);
+}
+
 
 }

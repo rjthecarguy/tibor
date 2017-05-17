@@ -23,9 +23,7 @@ export class LocationPage {
 
 @ViewChild('map') mapElement: ElementRef;
   map: any;
-  long: any;
-  lat: any;
-
+  
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public geolocation: Geolocation,public report:Report) {
   }
