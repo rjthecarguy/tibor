@@ -29,7 +29,7 @@ export class MyApp {
     this.events.subscribe('Menu:page', (pageName) => {
   // user and time are the same arguments passed in `events.publish(user, time)`
  
-this.nav.setRoot(pageName);
+this.nav.push(pageName);
   
   
 

@@ -24,11 +24,11 @@ export class PicturePage {
   }
 
 takePicturePage() {
-	this.navCtrl.setRoot(TakePicture);
+	this.navCtrl.push(TakePicture);
 }
 
 selectImagePage() {
-	this.navCtrl.setRoot(GetImage);
+	this.navCtrl.push(GetImage);
 }
 
 

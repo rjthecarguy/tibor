@@ -66,7 +66,7 @@ export class LocationPage {
   }
 
   openPicturePage() {
-  	this.navCtrl.setRoot(PicturePage);
+  	this.navCtrl.push(PicturePage);
   }
 
 }
