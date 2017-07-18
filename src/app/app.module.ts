@@ -12,6 +12,7 @@ import { Report } from '../providers/report';
 import { Camera } from '@ionic-native/camera';
 import { TakePicture} from '../pages/take-picture/take-picture';
 import { GetImage} from '../pages/get-image/get-image';
+import { HttpModule } from '@angular/http';
 
 
 
@@ -34,6 +35,7 @@ import { Geolocation } from '@ionic-native/geolocation';
       ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],

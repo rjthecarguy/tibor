@@ -16,6 +16,12 @@ pic: any;
 date:any;
 text:any;
 
+pic1:any;
+pic164: any;
+
+feelsLike:any;
+weatherLocation:any;
+
 
 
   constructor() {
