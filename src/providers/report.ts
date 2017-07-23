@@ -28,4 +28,18 @@ weatherLocation:any;
     console.log('Hello Report Provider');
   }
 
+
+  getDateTime () {
+
+var todayDate = new Date().toLocaleDateString();
+var todayTime = new Date().toLocaleTimeString();
+
+
+	return todayDate + "\n" + todayTime; 
+
+
+  }
+
+
+
 }

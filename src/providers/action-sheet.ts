@@ -3,6 +3,7 @@ import 'rxjs/add/operator/map';
 import { ActionSheetController } from 'ionic-angular'
 import { NavController } from 'ionic-angular';
 import { Events } from 'ionic-angular';
+import { ReportPage} from '../pages/report-page/report-page'
 
 
 /*
@@ -27,7 +28,8 @@ openActionSheet(){
  {
  text: 'Create a Photo/Video',
  handler: () => {
- 	this.events.publish('Menu:page', "LocationPage");
+ 	    
+ 	this.events.publish('Menu:page', "ReportPage");
  console.log("Camera Clicked");
  }
  },{

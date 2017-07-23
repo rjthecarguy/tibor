@@ -15,7 +15,6 @@ import { GetImage} from '../pages/get-image/get-image';
 import { HttpModule } from '@angular/http';
 
 
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Geolocation } from '@ionic-native/geolocation';
@@ -32,7 +31,8 @@ import { Geolocation } from '@ionic-native/geolocation';
     PicturePage,
     TakePicture,
     GetImage
-      ],
+
+    ],
   imports: [
     BrowserModule,
     HttpModule,
@@ -47,6 +47,7 @@ import { Geolocation } from '@ionic-native/geolocation';
     PicturePage,
     TakePicture,
     GetImage
+
   ],
   providers: [
     StatusBar,
