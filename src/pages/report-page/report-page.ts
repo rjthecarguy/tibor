@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import {Report} from '../../providers/report'
+import {TakePicture} from '../take-picture/take-picture'
 /**
  * Generated class for the ReportPage page.
  *
@@ -21,7 +22,10 @@ testRadioOpen = false;
   testCheckboxOpen = false;
   testCheckboxResult: any;
 
+  picImage:any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public report:Report) {
+
 
   	
   }
@@ -45,6 +49,63 @@ inCustody() {
 	this.reportText += this.report.getDateTime();
 	this.reportText += " - Suspect In Custody \n\n";
 }
+
+
+
+getPerson() {
+
+
+let alert = this.alertCtrl.create({
+      title: 'Add Person',
+      message: '',
+      inputs: [
+        {
+          name: 'lastName',
+          placeholder: 'Last Name'
+        },
+        {
+          name: 'firstName',
+          placeholder: 'First Name'
+        },
+        {
+          name: 'middleInit',
+          placeholder: 'Middle Initial'
+        },
+        {
+          name: 'dob',
+          placeholder: 'DOB'
+        },
+      ],
+      buttons: [
+        {
+          text: 'Save Person - No Picture',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        },
+        
+        {
+          text: 'Save Person with Picture',
+          handler: () => {
+            console.log('Saved clicked');
+            this.navCtrl.push(TakePicture);
+          }
+        },
+        {
+          text: 'Cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        },
+      ]
+    });
+
+    alert.present();
+
+
+}
+
+
 
 callType() {
 
@@ -105,7 +166,12 @@ callType() {
     alert.present();
   }
 
- 
+ ionViewDidEnter() {
+
+ 	this.picImage = this.report.pic1;
+ 	
+
+ }
  
 
 }

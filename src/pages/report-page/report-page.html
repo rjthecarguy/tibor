@@ -18,11 +18,11 @@
 <div id="reportText">
 <pre>{{reportText}}</pre>
 </div>
-
+<img [src]="picImage" *ngIf="picImage" />
 
 <button ion-button (click)="callType();">Call Type</button>
 <button ion-button (click)="addText();">On Scene</button>
-<button ion-button (click)="addText();">Add Person</button>
+<button ion-button (click)="getPerson();">Add Person</button>
 <button ion-button (click)="inCustody();">In Custody</button>
 
 </ion-content>
