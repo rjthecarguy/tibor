@@ -51,6 +51,19 @@ inCustody() {
 }
 
 
+postPerson(person){
+
+	this.reportText += this.report.getDateTime();
+	this.reportText += " - Person Recorded \n";
+	this.reportText += "  - Last:" + person.lastName + "\n";
+	this.reportText += "  - First:" + person.firstName + "\n";
+	this.reportText += "  - Mid Init:" + person.middleInit + "\n";
+	this.reportText += "  - DOB:" + person.dob + "\n\n";
+
+
+
+}
+
 
 getPerson() {
 
@@ -79,16 +92,19 @@ let alert = this.alertCtrl.create({
       buttons: [
         {
           text: 'Save Person - No Picture',
-          handler: () => {
-            console.log('Cancel clicked');
+          handler: (data) => {
+            console.log('No Pic clicked');
+            console.log(data);
+            this.postPerson(data);
           }
         },
         
         {
           text: 'Save Person with Picture',
-          handler: () => {
+          handler: (data) => {
             console.log('Saved clicked');
             this.navCtrl.push(TakePicture);
+            this.postPerson(data);
           }
         },
         {
@@ -104,6 +120,58 @@ let alert = this.alertCtrl.create({
 
 
 }
+
+leoAction() {
+
+let alert = this.alertCtrl.create();
+    alert.setTitle('LEO Action');
+
+ alert.addInput({
+      type: 'radio',
+      label: 'LEO Notified',
+      value: 'LEO Notified',
+      checked: true
+    });
+
+  alert.addInput({
+      type: 'radio',
+      label: 'LEO En Route',
+      value: 'LEO En Route',
+      checked: false
+    });
+
+   alert.addInput({
+      type: 'radio',
+      label: 'LEO On Scene',
+      value: 'LEO On Scene',
+      checked: false
+    });
+
+    alert.addInput({
+      type: 'radio',
+      label: 'LEO has Custody',
+      value: 'LEO has Custody',
+      checked: false
+    });
+
+
+      alert.addButton('Cancel');
+    alert.addButton({
+      text: 'Ok',
+      handler: (data: any) => {
+        console.log('Radio data:', data);
+        this.testRadioOpen = false;
+        this.testRadioResult = data;
+        this.reportText += this.report.getDateTime();
+        this.reportText += " - " + data + "\n\n";
+      }
+    });
+
+    alert.present();
+
+
+}
+
 
 
 
@@ -129,6 +197,12 @@ callType() {
       type: 'radio',
       label: 'Assault',
       value: 'Assault'
+    });
+
+     alert.addInput({
+      type: 'radio',
+      label: 'Suspicius Activity',
+      value: 'Suspicious'
     });
 
     alert.addInput({
@@ -169,7 +243,7 @@ callType() {
  ionViewDidEnter() {
 
  	this.picImage = this.report.pic1;
- 	
+
 
  }
  

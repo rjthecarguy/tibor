@@ -10,4 +10,18 @@ page-report-page {
 
 button {width: 30%;}
 
+
+#personPicDiv img {
+	height:60px;
+}
+
+#personPicDiv {
+	margin-top: 15px;
+	margin-bottom: 10px;
+	border: 1px solid black;
+}
+
+#closeReportButton {
+	background-color: red;
+}
 }

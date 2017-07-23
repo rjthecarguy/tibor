@@ -33,7 +33,7 @@ export class TakePicture {
         this.base64Image = "data:image/jpeg;base64," + imageData;
 
         this.report.pic1 = imageData;
-        this.report.pic164 = this.base64Image;
+        this.report.pic1 = this.base64Image;
         this.navCtrl.pop();
 
 
