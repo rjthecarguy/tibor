@@ -18,7 +18,7 @@ import { HttpModule } from '@angular/http';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Geolocation } from '@ionic-native/geolocation';
-
+import { ReportDetail } from '../pages/report-detail/report-detail';
 
 
 
@@ -30,7 +30,8 @@ import { Geolocation } from '@ionic-native/geolocation';
     MapPage,
     PicturePage,
     TakePicture,
-    GetImage
+    GetImage,
+    ReportDetail
 
     ],
   imports: [
@@ -46,7 +47,8 @@ import { Geolocation } from '@ionic-native/geolocation';
     MapPage,
     PicturePage,
     TakePicture,
-    GetImage
+    GetImage,
+    ReportDetail
 
   ],
   providers: [

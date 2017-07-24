@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import {Report} from '../../providers/report'
 import {TakePicture} from '../take-picture/take-picture'
+import {ReportDetail} from '../report-detail/report-detail'
 /**
  * Generated class for the ReportPage page.
  *
@@ -25,6 +26,8 @@ testRadioOpen = false;
   picImage:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public report:Report) {
+
+this.report.getLocation();
 
 
   	
@@ -63,6 +66,17 @@ postPerson(person){
 
 
 }
+
+reportInfo() {
+
+this.navCtrl.push(ReportDetail);
+
+}
+
+closeReport() {
+
+
+} 
 
 
 getPerson() {
@@ -202,7 +216,7 @@ callType() {
      alert.addInput({
       type: 'radio',
       label: 'Suspicius Activity',
-      value: 'Suspicious'
+      value: 'Suspicious Activity'
     });
 
     alert.addInput({
@@ -232,8 +246,11 @@ callType() {
         console.log('Radio data:', data);
         this.testRadioOpen = false;
         this.testRadioResult = data;
-        this.reportText = this.report.getDateTime();
+        this.report.reportTime = this.report.getDateTime();
+        this.reportText = this.report.reportTime;
         this.reportText += " - " + data + " Reported\n\n";
+        this.report.reportType = data;
+
       }
     });
 
